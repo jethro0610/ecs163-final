@@ -31,6 +31,6 @@ for feature in states["features"]:
     out_feature["geometry"] = feature["geometry"]
     out ["features"].append(out_feature)
 
-json_out = json.dumps(out, indent = 2)
+json_out = json.dumps(out)
 with open("world.json", "w") as outfile:
     outfile.write(json_out)
