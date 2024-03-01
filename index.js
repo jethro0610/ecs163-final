@@ -10,11 +10,11 @@ function testGraph() {
         .attr("height", height);
 
     const projection = d3.geoMercator()
-        .scale(70)
-        .center([0, 20])
+        .scale(150)
+        .center([-100, 20])
         .translate([width / 2, height / 2]);
 
-    d3.json("world.json", function(data) {
+    d3.json("us_states.json", function(data) {
         svg.append("g")
             .selectAll("path")
             .data(data.features)
@@ -23,6 +23,7 @@ function testGraph() {
                 .attr("d", d3.geoPath()
                     .projection(projection)
                 )
+                .attr("stroke", "gray")
     })
 }
 
