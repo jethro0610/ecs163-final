@@ -56,7 +56,6 @@ const us_state_regions = new Map([
     ["HI", "US Island"]
 ]);
 
-
 function testGraph() {
     // Declare the chart dimensions and margins.
     const width = 640;
@@ -72,7 +71,7 @@ function testGraph() {
         .center([-100, 20])
         .translate([width / 2, height / 2]);
 
-    d3.json("world.json", function(data) {
+    d3.json("world_melee_data.json", function(data) {
         const colorScale = d3.scaleLinear()
             .domain([0, data.highestScores[3]])
             .range(["gray", "red"]);

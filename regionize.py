@@ -281,6 +281,6 @@ for ranking in ranks:
         feature_names[region]["properties"]["players"][year - 2001] = region_players[region]
         print("\t" + region + ": " + str(region_scores[region]))
 
-json_out = json.dumps(out, indent=2)
-with open("world.json", "w") as outfile:
+json_out = json.dumps(out)
+with open("world_melee_data.json", "w") as outfile:
     outfile.write(json_out)
