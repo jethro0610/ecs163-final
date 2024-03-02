@@ -22,37 +22,18 @@ function testGraph() {
                 .attr("d", d3.geoPath()
                     .projection(projection)
                 )
-                .attr("stroke", "red")
-                .on("mouseover", highlightCountry)
-                .on("mouseout", handleMouseOut);
+                .on("mouseover", highlightRegion)
+                .on("mouseout", unhighlightRegion);
     });
 
-    // Function to highlight country when mouse is hovering over it
-    function highlightCountry(d, i) {
+    function highlightRegion() {
         d3.select(this)
-            .style("stroke", "black") // Outline country
-            .style("stroke-width", 1); // Adjust border width
-        
-        // Show miniature graph next to the country
-        const image = svg.append("image")
-            .attr("width", 50)
-            .attr("height", 50)
-            .attr("xlink:href", "beatDAGAME.png"); // TODO: Replace image with line graph of players
-    
-        // Mousemove event listener to update image position
-        svg.on("mousemove", function() {
-            const [x, y] = d3.mouse(this);
-            image.attr("x", x + 10)
-                .attr("y", y - 10);
-        });
+            .style("fill", "black")
     }
 
-    // Function to unhighlight country
-    function handleMouseOut(d, i) {
+    function unhighlightRegion() {
         d3.select(this)
-        .style("stroke", "none"); // Remove border
-        // Remove miniature graph
-        svg.select("image").remove();
+            .style("fill", "gray")
     }
 }
 
