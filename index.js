@@ -73,15 +73,15 @@ function testGraph() {
 
     d3.json("world_melee_data.json", function(data) {
         const colorScale = d3.scaleLinear()
-            .domain([0, data.highestScores[3]])
-            .range(["gray", "red"]);
+            .domain([0, data.highestScores[22]])
+            .range(["white", "red"]);
 
         svg.append("g")
             .selectAll("path")
             .data(data.features)
             .enter().append("path")
                 .attr("fill", function(d) {
-                    return colorScale(d.properties.scores[3]);
+                    return colorScale(d.properties.scores[22]);
                 })
                 .attr("d", d3.geoPath()
                     .projection(projection)
