@@ -13,7 +13,7 @@ function changeTime(delta) {
 
     const colorScale = d3.scaleLinear()
         .domain([0, highestScores[curYear - 2001]])
-        .range(["white", "red"]);
+        .range(["#ededed", "red"]);
 
     mapSvg.selectAll("path")
         .transition()
@@ -55,7 +55,7 @@ function generateMap() {
 
         const colorScale = d3.scaleLinear()
             .domain([0, highestScores[curYear - 2001]])
-            .range(["white", "red"]);
+            .range(["#ededed", "red"]);
 
         const g = svg.append("g");
         g.selectAll("path")
