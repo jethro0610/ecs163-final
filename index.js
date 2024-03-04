@@ -1,61 +1,3 @@
-const us_state_regions = new Map([
-    ["WA", "US West"],
-    ["OR", "US West"],
-    ["CA", "US West"],
-    ["MT", "US West"],
-    ["ID", "US West"],
-    ["WY", "US West"],
-    ["UT", "US West"],
-    ["CO", "US West"],
-    ["NV", "US West"],
-
-    ["NM", "US Southwest"],
-    ["TX", "US Southwest"],
-    ["OK", "US Southwest"],
-    ["AZ", "US Southwest"],
-
-    ["ND", "US Midwest"],
-    ["SD", "US Midwest"],
-    ["NE", "US Midwest"],
-    ["KS", "US Midwest"],
-    ["MN", "US Midwest"],
-    ["IA", "US Midwest"],
-    ["MO", "US Midwest"],
-    ["WI", "US Midwest"],
-    ["IL", "US Midwest"],
-    ["MI", "US Midwest"],
-    ["IN", "US Midwest"],
-    ["OH", "US Midwest"],
-
-    ["AR", "US Southeast"],
-    ["LA", "US Southeast"],
-    ["KY", "US Southeast"],
-    ["TN", "US Southeast"],
-    ["MS", "US Southeast"],
-    ["WV", "US Southeast"],
-    ["MD", "US Southeast"],
-    ["VA", "US Southeast"],
-    ["NC", "US Southeast"],
-    ["SC", "US Southeast"],
-    ["GA", "US Southeast"],
-    ["AL", "US Southeast"],
-    ["FL", "US Southeast"],
-
-    ["ME", "US Northeast"],
-    ["VT", "US Northeast"],
-    ["NH", "US Northeast"],
-    ["MA", "US Northeast"],
-    ["CT", "US Northeast"],
-    ["RI", "US Northeast"],
-    ["NY", "US Northeast"],
-    ["PA", "US Northeast"],
-    ["NJ", "US Northeast"],
-    ["DE", "US Northeast"],
-
-    ["AK", "US Island"],
-    ["HI", "US Island"]
-]);
-
 function testGraph() {
     // Declare the chart dimensions and margins.
     const width = 640;
@@ -66,34 +8,49 @@ function testGraph() {
         .attr("width", width)
         .attr("height", height);
 
-    const projection = d3.geoMercator()
-        .scale(70)
-        .center([-100, 20])
-        .translate([width / 2, height / 2]);
-
     d3.json("world_melee_data.json", function(data) {
+        const projection = d3.geoMercator()
+            .scale(70)
+            .center([0, 20])
+            .translate([width / 2, height / 2]);
+
+        const zoom = d3.zoom()
+            .scaleExtent([1, 10]) // Zoom levels
+            .on("zoom", zoomed);
+
+        svg.call(zoom); // Calling the zoom function
+
+        // Function to handle zooming
+        function zoomed() {
+            // We need to figure out how to have the map repeat itself
+            // I read online that you can have two projection next to
+            // each other. Maye that works?
+            g.attr("transform", d3.event.transform);
+        }
+
         const colorScale = d3.scaleLinear()
-            .domain([0, data.highestScores[22]])
+            .domain([0, data.highestScores[18]])
             .range(["white", "red"]);
 
-        svg.append("g")
-            .selectAll("path")
+        const g = svg.append("g");
+        g.selectAll("path")
             .data(data.features)
             .enter().append("path")
                 .attr("fill", function(d) {
-                    return colorScale(d.properties.scores[22]);
+                    console.log(d.properties.scores[18]);
+                    return colorScale(d.properties.scores[18]);
                 })
                 .attr("d", d3.geoPath()
                     .projection(projection)
                 )
-                // .on("mouseover", highlightRegion)
-                // .on("mouseout", unhighlightRegion);
     });
 
-    function highlightRegion() {
+    // Function to highlight country when mouse is hovering over it
+    function highlightCountry(d, i) {
         d3.select(this)
-            .style("fill", "black")
-
+            .style("stroke", "black") // Outline country
+            .style("stroke-width", 1); // Adjust border width
+        
         // Show miniature graph next to the country
         const image = svg.append("image")
             .attr("width", 50)
@@ -108,10 +65,11 @@ function testGraph() {
         });
     }
 
-    function unhighlightRegion() {
+    // Function to unhighlight country
+    function handleMouseOut(d, i) {
         d3.select(this)
-            .style("fill", "gray")
-
+            .style("stroke", "none"); // Remove border
+        // Remove miniature graph
         svg.select("image").remove();
     }
 }
