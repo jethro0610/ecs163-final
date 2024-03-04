@@ -1,17 +1,42 @@
-function testGraph() {
-    // Declare the chart dimensions and margins.
-    const width = 640;
-    const height = 400;
+let curYear = 2001;
+const width = 640;
+const height = 400;
+let highestScores;
 
+function changeTime(delta) {
+    const mapSvg = d3.select("#map")
+        .attr("width", width)
+        .attr("height", height);
+
+    curYear += delta;
+    curYear = Math.min(Math.max(curYear, 2001), 2023);
+
+    const colorScale = d3.scaleLinear()
+        .domain([0, highestScores[curYear - 2001]])
+        .range(["white", "red"]);
+
+    mapSvg.selectAll("path")
+        .transition()
+        .attr("fill", function(d) {
+            return colorScale(d.properties.scores[curYear - 2001]);
+        })
+
+    document.getElementById("year").innerHTML = curYear;
+}
+
+function generateMap() {
     // Create the SVG container.
-    const svg = d3.select("body").append("svg")
+    const svg = d3.select("#map")
         .attr("width", width)
         .attr("height", height);
 
     d3.json("world_melee_data.json", function(data) {
+        // This is hacky and I hate it, but whatever lol
+        highestScores = data.highestScores;
+
         const projection = d3.geoMercator()
-            .scale(70)
-            .center([0, 20])
+            .scale(150)
+            .center([-50, 20])
             .translate([width / 2, height / 2]);
 
         const zoom = d3.zoom()
@@ -29,7 +54,7 @@ function testGraph() {
         }
 
         const colorScale = d3.scaleLinear()
-            .domain([0, data.highestScores[18]])
+            .domain([0, highestScores[curYear - 2001]])
             .range(["white", "red"]);
 
         const g = svg.append("g");
@@ -37,41 +62,14 @@ function testGraph() {
             .data(data.features)
             .enter().append("path")
                 .attr("fill", function(d) {
-                    console.log(d.properties.scores[18]);
-                    return colorScale(d.properties.scores[18]);
+                    return colorScale(d.properties.scores[curYear - 2001]);
                 })
                 .attr("d", d3.geoPath()
                     .projection(projection)
                 )
     });
 
-    // Function to highlight country when mouse is hovering over it
-    function highlightCountry(d, i) {
-        d3.select(this)
-            .style("stroke", "black") // Outline country
-            .style("stroke-width", 1); // Adjust border width
-        
-        // Show miniature graph next to the country
-        const image = svg.append("image")
-            .attr("width", 50)
-            .attr("height", 50)
-            .attr("xlink:href", "beatDAGAME.png"); // TODO: Replace image with line graph of players
-    
-        // Mousemove event listener to update image position
-        svg.on("mousemove", function() {
-            const [x, y] = d3.mouse(this);
-            image.attr("x", x + 10)
-                .attr("y", y - 10);
-        });
-    }
-
-    // Function to unhighlight country
-    function handleMouseOut(d, i) {
-        d3.select(this)
-            .style("stroke", "none"); // Remove border
-        // Remove miniature graph
-        svg.select("image").remove();
-    }
+    return svg;
 }
 
-testGraph();
+generateMap();
