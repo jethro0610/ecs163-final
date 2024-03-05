@@ -35,8 +35,8 @@ function generateMap() {
         highestScores = data.highestScores;
 
         const projection = d3.geoMercator()
-            .scale(150)
-            .center([-50, 20])
+            .scale(70)
+            .center([60, 20])
             .translate([width / 2, height / 2]);
 
         const zoom = d3.zoom()
@@ -47,10 +47,12 @@ function generateMap() {
 
         // Function to handle zooming
         function zoomed() {
-            // We need to figure out how to have the map repeat itself
-            // I read online that you can have two projection next to
-            // each other. Maye that works?
-            g.attr("transform", d3.event.transform);
+            const {x, y, k} = d3.event.transform;
+            const newX = Math.min(0, Math.max(width - width * k, x));
+            const newY = Math.min(0, Math.max(height - height * k, y));
+
+
+            g.attr("transform", `translate(${newX}, ${newY}) scale(${k})`);
         }
 
         const colorScale = d3.scaleLinear()
