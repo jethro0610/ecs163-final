@@ -1,6 +1,6 @@
 let curYear = 2001;
-const mapWidth = 650;
-const mapHeight = 650;
+const mapWidth = 1000;
+const mapHeight = 800;
 
 function changeMapTime(delta) {
     const mapSvg = d3.select("#map")
@@ -35,7 +35,7 @@ function generateMap() {
         .attr("height", mapHeight);
 
     const projection = d3.geoMercator()
-        .scale(100)
+        .scale(120)
         .translate([mapWidth / 2, mapHeight / 2]);
 
     const zoom = d3.zoom()

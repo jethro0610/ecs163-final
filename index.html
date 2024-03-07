@@ -7,11 +7,23 @@
     </head>
 
     <body>
-        <div id="left-panel"></div>
-        <svg id="map"></svg>
-        <div id="year">2001</div>
-        <button onclick="changeMapTime(-1)">Back</button>
-        <button onclick="changeMapTime(1)">Forward</button>
+        <div class="flex-row flex-center fill">
+            <div id="left-panel" class="panel flex-center">
+
+            </div>
+
+            <div class="flex-col">
+                <svg id="map"></svg>
+                <div id="year">2001</div>
+                <div class="flex-row">
+                    <button onclick="changeMapTime(-1)">Back</button>
+                    <button onclick="changeMapTime(1)">Forward</button>
+                </div>
+            </div>
+
+            <div id="right-panel" class="panel flex-center">
+            </div>
+        </div>
 
         <script src="https://d3js.org/d3.v4.min.js"></script>
         <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
