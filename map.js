@@ -1,6 +1,6 @@
 let curYear = 2001;
-const mapWidth = 800;
-const mapHeight = 600;
+const mapWidth = 650;
+const mapHeight = 650;
 
 function changeMapTime(delta) {
     const mapSvg = d3.select("#map")
@@ -30,21 +30,21 @@ function generateMap() {
         .attr("height", mapHeight);
 
     const projection = d3.geoMercator()
-        .scale(150)
-        .center([-50, 20])
+        .scale(100)
         .translate([mapWidth / 2, mapHeight / 2]);
 
     const zoom = d3.zoom()
         .scaleExtent([1, 10]) // Zoom levels
+        .translateExtent([
+            [0, 0],
+            [mapWidth, mapHeight]
+        ])
         .on("zoom", zoomed);
 
     svg.call(zoom); // Calling the zoom function
 
     // Function to handle zooming
     function zoomed() {
-        // We need to figure out how to have the map repeat itself
-        // I read online that you can have two projection next to
-        // each other. Maye that works?
         g.attr("transform", d3.event.transform);
     }
 
