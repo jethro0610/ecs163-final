@@ -1,0 +1,189 @@
+[
+    {
+        "year": 2001,
+        "events":
+        [
+            {
+                "regions": ["Japan"],
+                "text": "Super Smash Bros. Melee is released November 21st in Japan. The game launches to critical acclaim and captures an audience of diehard players who look to push the game to its limits."
+            },
+            {
+                "regions": ["US West", "US Southwest", "US Northeast", "US Southeast", "US Midwest"],
+                "text": "Super Smash Bros. Melee is released December 3rd in the US. Similar to Japan, the US finds a diehard playerbase that celebrate the game" 
+            }
+        ]
+    },
+
+    {
+        "year": 2002,
+        "events":
+        [
+            {
+                "regions": ["US West"],
+                "text": "The first recorded competitve tournaments occur in California. This marks the start of the regions initial dominance in the game. The premier tournament series, Tournament Go, sees California's best players compete for #1. Notable is the series' ruleset, as items were enabled with a random stage list"
+            },
+            {
+                "regions": ["US West"],
+                "text": "Recipherus wins Tournament Go 2-3, setting himself up as the proclaimed best player in the world"
+            },
+            {
+                "regions": ["Austria","Belgium","Bulgaria","Cyprus","Czech Republic","Denmark","Estonia","Finland","France","Germany","Greece","Hungary","Ireland","Italy","Latvia","Lithuania","Luxembourg","Malta","Netherlands","Poland","Portugal","Romania","Slovakia","Slovenia","Spain","Sweden","United Kingdom"],
+                "text": "Super Smash Bros. Melee is released in Europe. Notable is Europe recieved an updated version of the game with major balance differences from the US and Japan version. The release date and patch of the game puts them behind initially"
+            }
+        ]
+    },
+
+
+    {
+        "year": 2003,
+        "events":
+        [
+            {
+                "regions": ["US West"],
+                "text": "California Marth main Ken competes in his first tournament: Tournament Go 4. He comes out victorious over Recipherus beginning his rise to the #1 player. His dominance would continue, earning him the title King of Smash. Ken becomes the main representative of the US west coast."
+            },
+            {
+                "regions": ["US Southeast"],
+                "text": "The earliest known Eastern US tournament series, DC Super Smash, is started. Melee crew H2YL take the top 3 spots in the tournament. The crew consisted of Azen, ChuDat, and Chillin; all players would be mainstays of the games top level for the coming years. Azen becomes the main representative of the US east coast."
+            },
+            {
+                "regions": ["US West"],
+                "text": "The first competition between the west and east of the US occurs at Tournament Go 5. Ken comes out victorious and claims the west to be the better coast of America. The east coast notes the ruleset having items on, making it a farce"
+            },
+            {
+                "regions": ["Austria","Belgium","Bulgaria","Cyprus","Czech Republic","Denmark","Estonia","Finland","France","Germany","Greece","Hungary","Ireland","Italy","Latvia","Lithuania","Luxembourg","Malta","Netherlands","Poland","Portugal","Romania","Slovakia","Slovenia","Spain","Sweden","United Kingdom"],
+                "text": "Super Smash Bros. Melee is released in Europe. Notable is Europe recieved an updated version of the game with major balance differences from the US and Japan version. The release date and patch of the game puts them behind initially"
+            }
+        ]
+    },
+
+    {
+        "year": 2004,
+        "events":
+        [
+            {
+                "regions": ["US West"],
+                "text": "The west coast Melee players compete in the east coast for the first time at Game Over. For the first time in Ken's career, he loses in bracket. East coast player Chillindude sends him to losers and calls him a fraud. Ken proceeds to win the tournament from the losers bracket"
+            },
+            {
+                "regions": ["Japan"],
+                "text": "Japanese player Captain Jack travels to the US for the first time for the sixth and final Tournament Go. The tournament marked the largest tournament in the game's history, clocking in at 112 entrants. He surprises the entire US by placing 2nd overall. This along with other tournaments put Japan on the map with his 3rd overall ranking for 2004"
+            },
+            {
+                "regions": ["US Southeast"],
+                "text": "Azen wins the Tournament Go 6, the largest tournament in the game's history. This marks a big point for the east coasts skill, especially when Ken placed 9th"
+            },
+            {
+                "regions": ["US West", "US Southwest", "US Northeast", "US Southeast", "US Midwest"],
+                "text": "Major League Gaming begins their Melee circuit, creating one of the mainstay tournament series' for the game's early years"
+            }
+        ]
+    },
+
+    {
+        "year": 2005,
+        "events":
+        [
+            {
+                "regions": ["US West"],
+                "text": "Ken wins the largest tournament of the year, MELEE-FC3 against 186 competitors. He also wins the MLG finals in New York. This cements him as the #1 player of 2005 and the game's most dominant player from 2001 onward"
+            },
+            {
+                "regions": ["Japan"],
+                "text": "Ken travels to the Jack Garden Tournament in Japan and wins. Notable is the appearance of Bombsoldier, a previously unknown Japanese Falco main who set the stage for Falco's surge in the game's future"
+            },
+            {
+                "regions": ["US Southeast"],
+                "text": "Though Ken maintains the #1 spot for the west, more high-level players begin to content in the east. This marks the first time in the game's history where the US east is considered the better region. East coast players Wife, Husband, andPC Chris begin to make the mark. Notable is Wife's set against Ken in MLG Atlanta 2005, where he nearly defeated the unanimous #1 player"
+            },
+            {
+                "regions": ["US West"],
+                "text": "California player Isai defeats Ken at the MOAST 5. This marks the first time Isai, Ken's training partner, defeats his friend in bracket. The set was considered one of the highest levels of play up to that point"
+            }
+        ]
+    },
+
+    {
+        "year": 2006,
+        "events":
+        [
+            {
+                "regions": ["US Southeast", "US Northeast"],
+                "text": "The east coast continues their improvement against the west coast. Notable new players include KoreanDJ, Mew2King, and PC Chris, who would have a 3-way rivalry in the coming years. These players along with Azen would prove a legitimate threat for the previous #1 player Ken"
+            },
+            {
+                "regions": ["Canada"],
+                "text": "For the first time, Canada becomes a contender in Melee, as Canadian Jigglypuff The King competes in the MLG circuit with solid placements"
+            },
+            {
+                "regions": ["US Northeast"],
+                "text": "PC Chris wins the MLG 2006 New York opener over Ken in a huge upset. This begins the most difficult year for Ken by far and continues the case for the east coast being better than the west"
+            },
+            {
+                "regions": ["US West"],
+                "text": "Despite a more challenging year than 2005, Ken again secures the #1 spot against a higher level of competition than previous years. After this year, Ken's interest in the game begins to wane and he slowly steps away from the game in the coming years."
+            }
+        ]
+    },
+
+    {
+        "year": 2007,
+        "events":
+        [
+            {
+                "regions": ["US Southeast"],
+                "text": "For the first time in the game's history, Ken is not ranked #1. Instead, the spot goes to Florida Marth main Mew2King as he has a dominant year by innovating Melee's combos. This continue's the eastern US's dominance over the west."
+            },
+            {
+                "regions": ["Netherlands"],
+                "text": "The European Melee scene becomes more active. The region crowns a #1 player, Amsah from the Netherlands. Throughout the whole year, he never lost a tournament in Europe."
+            },
+            {
+                "regions": ["US Northeast"],
+                "text": "KoreanDJ and PC Chris would content with Mew2King throughout the year. While they obtained a fair share of tournament victories, Mew2King would prove the most dominant."
+            },
+            {
+                "regions": ["US West"],
+                "text": "Though Ken's dominance ends at this period of time, a new representative from California emerges. Mango, a Jigglypuff main at the time, clutches a 3rd place position at EVO 2007 while defeating Mew2King along the way. He would later be known as Melee's GOAT."
+            }
+        ]
+    },
+
+    {
+        "year": 2008,
+        "events":
+        [
+            {
+                "regions": ["US Southeast"],
+                "text": "Mew2King would continue his #1 ranking for the second year in a row. Player's begin to belive he has taken Ken's place as the most dominant player."
+            },
+            {
+                "regions": ["US West"],
+                "text": "Mango climbs rapidly in the ranks, taking the #2 spot for the year and giving the west coast of Melee a case against the east. Notable is his victory at Pound 3, where he defeated the east coast's Mew2King, PC Chris, Azen, ChuDat; all considered among the regions best."
+            },
+            {
+                "regions": ["Sweden"],
+                "text": "Swedish Peach main Armada begins making a name for himself in Europe. He quickly becomes the country's #1 player and contends for Amsah's title as #1 in Europe. He would later become contender for #1 in the world."
+            }
+        ]
+    },
+
+    {
+        "year": 2009,
+        "events":
+        [
+            {
+                "regions": ["US West"],
+                "text": "Mango reclaims the #1 rank spot for the west coast and further pushes the region back to its former glory. Other western US players like Zhu enter the ranks to assist Mango in reclaiming the regions #1 position."
+            },
+            {
+                "regions": ["Sweden"],
+                "text": "Armada travels to the US for the first time to compete in the California tournament Genesis. Though doubted by the US players at the time, Armada would make an incredible run to 2nd place in the tournament. He defeated many of America's best players, only to barely lose to Mango in the grand finals. This along with more tournaments cemented him as a surprise #2 for the year."
+            },
+            {
+                "regions": ["US Southeast"],
+                "text": "Florida Jigglypuff Hungrybox get ranked for the first time at a high 3rd place for the year. Another US Southeast player, PPMD/Dr.Peepee, would find themsleves ranked for the first time too. Mango, Armada, Hungrybox, PPMD, and Mew2King would soon claim the title of the Five Gods, as they would only ever lose to one another for the next few years."
+            }
+        ]
+    },
+]
