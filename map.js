@@ -14,10 +14,15 @@ function changeMapTime(delta) {
         .domain([0, regionData.highestScores[curYear - 2001]])
         .range(["#ededed", "red"]);
 
+    const minScore = regionData.highestScores[curYear - 2001] / 10.0;
+
     mapSvg.selectAll("path")
         .transition()
         .attr("fill", function(d) {
-            return colorScale(d.properties.scores[curYear - 2001]);
+            if (d.properties.scores[curYear - 2001] > 0.0)
+                return colorScale(Math.max(d.properties.scores[curYear - 2001], minScore));
+            else
+                return colorScale(0);
         })
 
     document.getElementById("year").innerHTML = curYear;
@@ -34,7 +39,7 @@ function generateMap() {
         .translate([mapWidth / 2, mapHeight / 2]);
 
     const zoom = d3.zoom()
-        .scaleExtent([1, 10]) // Zoom levels
+        .scaleExtent([1, 5]) // Zoom levels
         .translateExtent([
             [0, 0],
             [mapWidth, mapHeight]
