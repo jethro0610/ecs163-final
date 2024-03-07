@@ -4,5 +4,5 @@ let regionData;
 d3.json("world_melee_data.json", function(data) {
     regionData = data;
     generateMap();
-    generateLineGraph("Sweden");
+    generateLineGraph("US West");
 });
