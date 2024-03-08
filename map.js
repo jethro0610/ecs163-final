@@ -12,7 +12,7 @@ function changeMapTime(delta) {
         .domain([0, regionData.highestScores[curYear - 2001]])
         .range(["#efefef", "steelblue"]);
 
-    const minScore = regionData.highestScores[curYear - 2001] / 5.0;
+    const minScore = regionData.highestScores[curYear - 2001] / 10.0;
 
     mapSvg.selectAll("path")
         .transition()
@@ -42,7 +42,7 @@ function unhighlightRegion(region) {
         .domain([0, regionData.highestScores[curYear - 2001]])
         .range(["#efefef", "steelblue"]);
 
-    const minScore = regionData.highestScores[curYear - 2001] / 5.0;
+    const minScore = regionData.highestScores[curYear - 2001] / 10.0;
 
     mapSvg.selectAll("path")
         .filter(function(d) { return d.properties.name == region })
@@ -79,14 +79,16 @@ function generateMap() {
 
     // Function to handle zooming
     function zoomed() {
-        g.attr("transform", d3.event.transform);
+        g
+        .selectAll("path")
+        .attr("transform", d3.event.transform);
     }
 
     const colorScale = d3.scaleLinear()
         .domain([0, regionData.highestScores[curYear - 2001]])
         .range(["#efefef", "steelblue"]);
 
-    const minScore = regionData.highestScores[curYear - 2001] / 5.0;
+    const minScore = regionData.highestScores[curYear - 2001] / 10.0;
 
     const g = svg.append("g");
     g.selectAll("path")

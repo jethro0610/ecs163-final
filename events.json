@@ -28,7 +28,7 @@
             },
             {
                 "regions": ["Austria","Belgium","Bulgaria","Cyprus","Czech Republic","Denmark","Estonia","Finland","France","Germany","Greece","Hungary","Ireland","Italy","Latvia","Lithuania","Luxembourg","Malta","Netherlands","Poland","Portugal","Romania","Slovakia","Slovenia","Spain","Sweden","United Kingdom"],
-                "text": "Super Smash Bros. Melee is released in Europe. Notable is Europe recieved an updated version of the game with major balance differences from the US and Japan version. The release date and patch of the game puts them behind initially"
+                "text": "Super Smash Bros. Melee is released in Europe. Notable is Europe recieved an updated version of the game with major balance differences from the US and Japan versions. The release date and patch of the game puts them behind initially"
             }
         ]
     },
@@ -186,4 +186,43 @@
             }
         ]
     },
+
+    {
+        "year": 2010,
+        "events":
+        [
+            {
+                "regions": ["US Southeast"],
+                "text": "Hungrybox gets ranked #1 for the first time. He takes a career-defining 1st place at Apex 2010, the largest tournament that year."
+            },
+            {
+                "regions": ["US West"],
+                "text": "Mango gets ranked #2 for the year despite sandbagging and playing characters that are not his main. This begins his switch off of his original main, Jigglypuff"
+            },
+            {
+                "regions": ["US Southeast"],
+                "text": "Dr.PeePee/PPMD get ranked #5 for the year. He takes his first major win at Revival of Melee 3. This solidified his spot as the 5th God of Melee"
+            }
+        ]
+    },
+
+    {
+        "year": 2011,
+        "events":
+        [
+            {
+                "regions": ["Sweden"],
+                "text": "Armada gets ranked #1 for the first time. Notable is his victory at Genesis 2, where he defeated Mango in grand finals."
+            },
+            {
+                "regions": ["US West"],
+                "text": "For the first time since [], the US West becomes the #1 region in Melee again."
+            },
+            {
+                "regions": ["US Southeast"],
+                "text": "Dr.PeePee/PPMD get ranked #5 for the year. He takes his first major win at Revival of Melee 3. This solidified his spot as the 5th God of Melee"
+            }
+        ]
+    },
+
 ]
