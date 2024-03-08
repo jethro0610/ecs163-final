@@ -234,8 +234,9 @@ players = json.load(players_file)
 ranks_file = open("ranks.json")
 ranks = json.load(ranks_file)
 
-def get_player_score(player_rank, lowest_rank):
-    return (lowest_rank - (player_rank - 1))
+def get_player_score(player_rank, lowest_rank, year):
+    year_power = 2 if year < 2013 else 8
+    return (lowest_rank - (player_rank - 1)) ** year_power
 
 out["highestScores"] = [0] * 23
 
@@ -262,7 +263,7 @@ for ranking in ranks:
         if region not in region_players:
             region_players[region] = []
 
-        region_scores[region] += get_player_score(player["rank"], lowest_rank)
+        region_scores[region] += get_player_score(player["rank"], lowest_rank, year)
         region_players[region].append({
             "name": player["name"],
             "rank": player["rank"],

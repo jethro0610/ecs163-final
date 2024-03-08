@@ -182,7 +182,7 @@
             },
             {
                 "regions": ["US Southeast"],
-                "text": "Florida Jigglypuff Hungrybox get ranked for the first time at a high 3rd place for the year. Another US Southeast player, PPMD/Dr.Peepee, would find themsleves ranked for the first time too. Mango, Armada, Hungrybox, PPMD, and Mew2King would soon claim the title of the Five Gods, as they would only ever lose to one another for the next few years."
+                "text": "Florida Jigglypuff Hungrybox get ranked for the first time at a high 3rd place for the year. Another US Southeast player, PPMD/Dr.Peepee, would find themsleves ranked for the first time too. Mango, Armada, Hungrybox, PPMD, and Mew2King would soon claim the title of the Five Gods, as they would be the only ones to win major tournaments for the netx five years"
             }
         ]
     },
@@ -201,7 +201,11 @@
             },
             {
                 "regions": ["US Southeast"],
-                "text": "Dr.PeePee/PPMD get ranked #5 for the year. He takes his first major win at Revival of Melee 3. This solidified his spot as the 5th God of Melee"
+                "text": "Dr.PeePee/PPMD get ranked #5 for the year. He takes his first major win at Revival of Melee 3. This solidifies his spot as the 5th God of Melee"
+            },
+            {
+                "regions": ["Canada"],
+                "text": "Canada returns to the rankings in 2010 with their player KirbyKaze. He would take wins against the game's best like Mango and PPMD"
             }
         ]
     },
@@ -212,17 +216,77 @@
         [
             {
                 "regions": ["Sweden"],
-                "text": "Armada gets ranked #1 for the first time. Notable is his victory at Genesis 2, where he defeated Mango in grand finals."
+                "text": "Armada gets ranked #1 for the first time. Notable is his victory at Genesis 2, where he defeated Mango in grand finals. This marks the first time a non-American gets ranked #1. The only player he lost to in 2011 was Dr.PeePee/PPMD."
             },
             {
                 "regions": ["US West"],
-                "text": "For the first time since [], the US West becomes the #1 region in Melee again."
+                "text": "For the first time since 2004, the US West becomes the #1 region in Melee again. This is brought on by Mango's #2 ranking, as well as new California players like Lovage, Shroomed, S2J, and Zhu"
             },
             {
-                "regions": ["US Southeast"],
-                "text": "Dr.PeePee/PPMD get ranked #5 for the year. He takes his first major win at Revival of Melee 3. This solidified his spot as the 5th God of Melee"
+                "regions": ["US West"],
+                "text": "Mango switches main from Jigglypuff to Fox and impresses the scene at Genesis 2. Despite his waning interest in the game, he again gets ranked #2"
             }
         ]
     },
 
+    {
+        "year": 2012,
+        "events":
+        [
+            {
+                "regions": ["Sweden"],
+                "text": "Armada gets ranked #1 for the second year in a row. Again, he boasts an impressive record for the year, only losing to Hungrybox and Dr.PeePee/PPMD. A case for him attaining the same dominance as Ken begins to form."
+            },
+            {
+                "regions": ["US Southeast"],
+                "text": "The US Southeast reclaims the #1 region from the US West. This is largely due to Hungrybox and Dr.PeePee/PPMDs high ranks, as well as the lower ranks of the west coast falling off the ranks"
+            },
+            {
+                "regions": ["Canada"],
+                "text": "Canada returns to the ranks again on the back of KirbyKaze. In 2012, he became the first Sheik to defeat Hungrybox in tournament since he's been top five."
+            }
+        ]
+    },
+
+    {
+        "year": 2013,
+        "events":
+        [
+            {
+                "regions": ["All"],
+                "text": "The ranking get largely expanded to a top 100 list due to better data recording. This enables more regions to enter the ranks and have relatively lower-level players represent their regions. Melee would also see a return to EVO and a new documentary that boost interest in the game and attract more competitve players."
+            },
+            {
+                "regions": ["US West"],
+                "text": "The US West reclaims the #1 spot. From this point till 2023, the US West would maintain this #1 regional ranking. Mango takes the #1 spot for the first time since 2009. Notable is his victory at EVO 2013, the largest Melee tournament up till that point. He would win the bracket from losers, defeating Armada, Hungrybox, and PPMD along the way."
+            },
+            {
+                "regions": ["Sweden"],
+                "text": "Sweden maintains its status as a threat in Melee, this time with more than just Armada. While Armada get the #2 rank, newcomer Leffen takes the #14 and further boosts the regions skill level."
+            },
+            {
+                "regions": ["Japan"],
+                "text": "Japan re-enters the ranks with their new best player: aMSA. aMSa would make an impressive run at EVO with a character thought to be terrible: Yoshi. While some called it a fluke at the time, he would continue to climb the ranks and is a top 5 player today."
+            }
+        ]
+    },
+
+    {
+        "year": 2014,
+        "events":
+        [
+            {
+                "regions": ["US West"],
+                "text": "Mango gets ranked #1 for the second year in a row; his first time repeating. In 2014, he won MLG Anaheim, EVO, Kings of Cali, and the Big House. His impressive showing 2 years in a row and the skill he displayed begin his argument for Melee's GOAT."
+            },
+            {
+                "regions": ["Japan"],
+                "text": "aMSa climbs a whopping 55 spots in the ranks, making him an anomaly in the game due to his region and character."
+            },
+            {
+                "regions": ["Sweden"],
+                "text": "Armada takes the #2 spot again this year. Leffen, also from Sweden, becomes one of the first non-top-five players to beat Armada in tournament since 2010. This clinches him the #6 rank for the year and the title as Melee's Godslayer."
+            }
+        ]
+    },
 ]
