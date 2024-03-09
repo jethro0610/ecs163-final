@@ -31,7 +31,7 @@ function highlightRegion(region) {
     const mapSvg = d3.select("#map")
 
     mapSvg.selectAll("path")
-        .filter(function(d) { return d.properties.name == region })
+        .filter(function(d) { return region == "All" || d.properties.name == region })
         .transition()
         .attr("fill", "red");
 }
@@ -46,7 +46,7 @@ function unhighlightRegion(region) {
     const minScore = regionData.highestScores[curYear - 2001] / 6.0;
 
     mapSvg.selectAll("path")
-        .filter(function(d) { return d.properties.name == region })
+        .filter(function(d) { return region == "All" || d.properties.name == region })
         .transition()
         .attr("fill", function(d) {
             if (d.properties.scores[curYear - 2001] > 0.0)

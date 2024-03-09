@@ -4,7 +4,7 @@ function generateLineGraph(region) {
     const height = 200 - margin.top - margin.bottom;
 
     // Create the SVG container.
-    var svg = d3.select("#left-panel").append("svg")
+    var svg = d3.select("#right-panel").append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
         .append("g")

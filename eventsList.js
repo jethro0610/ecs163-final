@@ -20,7 +20,7 @@ function generateEventsForYear(year) {
 }
 
 function generateEvent(event) {
-    const panel = document.getElementById("right-panel");
+    const panel = document.getElementById("left-panel");
     const div = document.createElement("div");
     div.className = "event-card";
     div.innerHTML = event.text;
