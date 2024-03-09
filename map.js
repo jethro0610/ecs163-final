@@ -12,7 +12,7 @@ function changeMapTime(delta) {
         .domain([0, regionData.highestScores[curYear - 2001]])
         .range(["#efefef", "steelblue"]);
 
-    const minScore = regionData.highestScores[curYear - 2001] / 6.0;
+    const minScore = regionData.highestScores[curYear - 2001] / 8.0;
 
     mapSvg.selectAll("path")
         .transition()
@@ -43,7 +43,7 @@ function unhighlightRegion(region) {
         .domain([0, regionData.highestScores[curYear - 2001]])
         .range(["#efefef", "steelblue"]);
 
-    const minScore = regionData.highestScores[curYear - 2001] / 6.0;
+    const minScore = regionData.highestScores[curYear - 2001] / 8.0;
 
     mapSvg.selectAll("path")
         .filter(function(d) { return region == "All" || d.properties.name == region })
