@@ -1,16 +1,22 @@
-const testEvent = {
-    region: "Sweden",
-    text: "Armada competes in the US for the first time at Genesis. He places 2nd and makes Sweden a legitimate threat in Melee" 
-}
+let events;
+let eventDivs = [];
 
-const testEvent2 = {
-    region: "US West",
-    text: "Mango is da goat" 
-}
+// Load the region data and store it as a global variable
+d3.json("events.json", function(data) {
+    events = data;
+    generateEventsForYear(2001);
+});
 
-const testEvent3 = {
-    region: "Japan",
-    text: "Captain Jack travels from Japan to compete in the US for the first time. This marks the first time a non-American travels to compete. Captain Jack put on a stellar performance and was ranked 2nd overall"
+function generateEventsForYear(year) {
+    eventDivs.forEach((div) => {
+        div.remove();
+    })
+    eventDivs = [];
+
+    const yearEvents = events[year - 2001]; 
+    yearEvents.events.forEach((event) => {
+        generateEvent(event);
+    })
 }
 
 function generateEvent(event) {
@@ -21,14 +27,16 @@ function generateEvent(event) {
     panel.appendChild(div);
 
     div.onmouseover = function() {
-        highlightRegion(event.region);
+        event.regions.forEach((region) => {
+            highlightRegion(region);
+        })
     }
 
     div.onmouseout = function() {
-        unhighlightRegion(event.region);
+        event.regions.forEach((region) => {
+            unhighlightRegion(region);
+        })
     }
-}
 
-generateEvent(testEvent);
-generateEvent(testEvent2);
-generateEvent(testEvent3);
+    eventDivs.push(div);
+}

@@ -12,7 +12,7 @@ function changeMapTime(delta) {
         .domain([0, regionData.highestScores[curYear - 2001]])
         .range(["#efefef", "steelblue"]);
 
-    const minScore = regionData.highestScores[curYear - 2001] / 10.0;
+    const minScore = regionData.highestScores[curYear - 2001] / 6.0;
 
     mapSvg.selectAll("path")
         .transition()
@@ -24,6 +24,7 @@ function changeMapTime(delta) {
         })
 
     document.getElementById("year").innerHTML = curYear;
+    generateEventsForYear(curYear);
 }
 
 function highlightRegion(region) {
@@ -42,7 +43,7 @@ function unhighlightRegion(region) {
         .domain([0, regionData.highestScores[curYear - 2001]])
         .range(["#efefef", "steelblue"]);
 
-    const minScore = regionData.highestScores[curYear - 2001] / 10.0;
+    const minScore = regionData.highestScores[curYear - 2001] / 6.0;
 
     mapSvg.selectAll("path")
         .filter(function(d) { return d.properties.name == region })
@@ -88,7 +89,7 @@ function generateMap() {
         .domain([0, regionData.highestScores[curYear - 2001]])
         .range(["#efefef", "steelblue"]);
 
-    const minScore = regionData.highestScores[curYear - 2001] / 10.0;
+    const minScore = regionData.highestScores[curYear - 2001] / 6.0;
 
     const g = svg.append("g");
     g.selectAll("path")
