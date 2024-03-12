@@ -9,7 +9,7 @@ function generatePortrait(id, portraitLocation) {
         .attr("y1", portraitLocation.y0)
         .attr("x2", portraitLocation.x0)
         .attr("y2", portraitLocation.y0)
-        .style("stroke", "gray")
+        .style("stroke", "#555555")
         .style("stroke-width", 0);
 
     portrait.append("svg:image")
@@ -55,8 +55,7 @@ function disablePortrait(id) {
         .attr("y", portraitLocation.y0);
 }
 
-function enablePortrait(id, player) {
-    player.radius = 100;
+function enablePortrait(id, player, radius) {
     const portrait = d3.select("#map").select("#" + id);
     const portraitLocation = portraitLocations[id];
 
@@ -77,10 +76,10 @@ function enablePortrait(id, player) {
         .transition()
         .duration(750)
         .attr("xlink:href", player.name + ".png")
-        .attr("x", portraitLocation.x0 - player.radius / 2)
-        .attr("y", portraitLocation.y0 - player.radius / 2)
-        .attr("width", player.radius)
-        .attr("height", player.radius);
+        .attr("x", portraitLocation.x0 - radius / 2)
+        .attr("y", portraitLocation.y0 - radius / 2)
+        .attr("width", radius)
+        .attr("height", radius);
 
     portrait.select("text")
         .attr("x", portraitLocation.x0)
@@ -91,11 +90,10 @@ function enablePortrait(id, player) {
         .text(player.name)
         .attr("opacity", 1)
         .attr("x", portraitLocation.x0)
-        .attr("y", portraitLocation.y0 - player.radius / 2 - 5);
+        .attr("y", portraitLocation.y0 - radius / 2 - 5);
 }
 
-function changePortrait(id, player) {
-    player.radius = 100;
+function changePortrait(id, player, radius) {
     const portrait = d3.select("#map").select("#" + id);
     const portraitLocation = portraitLocations[id];
 
@@ -109,10 +107,10 @@ function changePortrait(id, player) {
         .transition()
         .duration(750)
         .attr("xlink:href", player.name + ".png")
-        .attr("x", portraitLocation.x0 - player.radius / 2)
-        .attr("y", portraitLocation.y0 - player.radius / 2)
-        .attr("width", player.radius)
-        .attr("height", player.radius);
+        .attr("x", portraitLocation.x0 - radius / 2)
+        .attr("y", portraitLocation.y0 - radius / 2)
+        .attr("width", radius)
+        .attr("height", radius);
 
     portrait.select("text")
         .transition()
@@ -125,11 +123,10 @@ function changePortrait(id, player) {
         .text(player.name)
         .attr("opacity", 1)
         .attr("x", portraitLocation.x0)
-        .attr("y", portraitLocation.y0 - player.radius / 2 - 5);
+        .attr("y", portraitLocation.y0 - radius / 2 - 5);
 }
 
-function updatePortrait(id, player) {
-    player.radius = 100;
+function updatePortrait(id, player, radius) {
     const portrait = d3.select("#map").select("#" + id);
     const portraitLocation = portraitLocations[id];
 
@@ -143,10 +140,10 @@ function updatePortrait(id, player) {
     portrait.select("image")
         .transition()
         .duration(750)
-        .attr("x", portraitLocation.x0 - player.radius / 2)
-        .attr("y", portraitLocation.y0 - player.radius / 2)
-        .attr("width", player.radius)
-        .attr("height", player.radius)
+        .attr("x", portraitLocation.x0 - radius / 2)
+        .attr("y", portraitLocation.y0 - radius / 2)
+        .attr("width", radius)
+        .attr("height", radius)
         .attr("xlink:href", player.name + ".png");
 
     portrait.select("text")
@@ -156,7 +153,7 @@ function updatePortrait(id, player) {
         .attr("opacity", 1)
         .style("text-anchor", "middle")
         .attr("x", portraitLocation.x0)
-        .attr("y", portraitLocation.y0 - player.radius / 2 - 5);
+        .attr("y", portraitLocation.y0 - radius / 2 - 5);
 }
 
 function generatePortraits() {
@@ -166,8 +163,25 @@ function generatePortraits() {
 }
 
 function updatePortraitFromYear(curYear, prevYear = -1) {
+    const maxRadius = 100;
+    const minRank = 8;
+
     const curPortraitYear = portraitYears[curYear - 2001];
     const prevPortraitYear = prevYear == -1 ? undefined : portraitYears[prevYear - 2001];
+
+    let lowestRank = -Infinity;
+    for (region in curPortraitYear) {
+        if (region == "year")
+            continue;
+        
+
+        const rank = curPortraitYear[region].rank;
+        if (rank > lowestRank) {
+            lowestRank = rank;
+        }
+    }
+    lowestRank = Math.min(lowestRank, minRank);
+
 
     for (region in portraitLocations) {
         const curRegionPlayer = curPortraitYear == undefined ? undefined : curPortraitYear[region];
@@ -175,13 +189,18 @@ function updatePortraitFromYear(curYear, prevYear = -1) {
         const curRegionPlayerName = curRegionPlayer == undefined ? undefined : curRegionPlayer.name;
         const prevRegionPlayerName = prevRegionPlayer == undefined ? undefined : prevRegionPlayer.name;
 
+        const clampRank = Math.min(curRegionPlayer == undefined ? 10 : curRegionPlayer.rank, minRank);
+        const radius = maxRadius * Math.pow((lowestRank - (clampRank - 1)) / lowestRank, 0.75);
+
+        console.log(radius);
+
         if (prevRegionPlayerName == undefined && curRegionPlayerName != undefined)
-            enablePortrait(region, curRegionPlayer);
+            enablePortrait(region, curRegionPlayer, radius);
         else if (curRegionPlayerName == undefined)
             disablePortrait(region);
         else if (curRegionPlayerName != prevRegionPlayerName)
-            changePortrait(region, curRegionPlayer, 100)
+            changePortrait(region, curRegionPlayer, radius)
         else if (curRegionPlayerName == prevRegionPlayerName)
-            updatePortrait(region, curRegionPlayer, 100)
+            updatePortrait(region, curRegionPlayer, radius)
     }
 }

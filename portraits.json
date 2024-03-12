@@ -8,13 +8,13 @@
         },
         "US-Northeast": {
             "x0": 360, 
-            "y0": 295, 
+            "y0": 285, 
             "x1": 250, 
             "y1": 330
         },
         "US-Southeast": {
             "x0": 350,
-            "y0": 400,
+            "y0": 410,
             "x1": 230,
             "y1": 350
         },
@@ -37,7 +37,7 @@
             "y1": 275 
         },
         "Netherlands": {
-            "x0": 420,
+            "x0": 430,
             "y0": 250,
             "x1": 465,
             "y1": 288
@@ -53,241 +53,378 @@
         {
             "year": 2001,
             "US-West": {
-                "name": "Ken"
+                "name": "Ken",
+                "hm": false,
+                "rank": 1
+            },
+            "US-Southeast": {
+                "name": "Azen",
+                "hm": false,
+                "rank": 4
             }
         },
         {
             "year": 2002,
             "US-West": {
-                "name": "Ken"
+                "name": "Ken",
+                "hm": false,
+                "rank": 1
+            },
+            "US-Southeast": {
+                "name": "Azen",
+                "hm": false,
+                "rank": 4
             }
         },
         {
             "year": 2003,
             "US-West": {
-                "name": "Ken"
+                "name": "Ken",
+                "hm": false,
+                "rank": 1
+            },
+            "US-Southeast": {
+                "name": "Azen",
+                "hm": false,
+                "rank": 4
             }
         },
         {
             "year": 2004,
             "US-West": {
-                "name": "Ken"
-            },
-            "US-Southeast": {
-                "name": "Azen"
+                "name": "Ken",
+                "hm": false,
+                "rank": 1
             },
             "Japan": {
-                "name": "Captain Jack"
+                "name": "Captain Jack",
+                "hm": false,
+                "rank": 2
+            },
+            "US-Southeast": {
+                "name": "Azen",
+                "hm": false,
+                "rank": 3
             }
         },
         {
             "year": 2005,
             "US-West": {
-                "name": "Ken"
+                "name": "Ken",
+                "hm": false,
+                "rank": 1
             },
             "US-Southeast": {
-                "name": "ChuDat"
+                "name": "ChuDat",
+                "hm": false,
+                "rank": 2
             }
         },
         {
             "year": 2006,
             "US-West": {
-                "name": "Ken"
+                "name": "Ken",
+                "hm": false,
+                "rank": 1
             },
             "US-Southeast": {
-                "name": "Azen"
+                "name": "Azen",
+                "hm": false,
+                "rank": 2
             },
             "US-Northeast": {
-                "name": "PC Chris"
+                "name": "PC Chris",
+                "hm": false,
+                "rank": 3
             },
             "Canada": {
-                "name": "The King"
+                "name": "The King",
+                "hm": true,
+                "rank": 11
             }
         },
         {
             "year": 2007,
             "US-Southeast": {
-                "name": "Mew2King"
+                "name": "Mew2King",
+                "hm": false,
+                "rank": 1
             },
             "US-West": {
-                "name": "Ken"
+                "name": "Ken",
+                "hm": false,
+                "rank": 2
             },
             "US-Northeast": {
-                "name": "KoreanDJ"
+                "name": "KoreanDJ",
+                "hm": false,
+                "rank": 3
             },
             "Netherlands": {
-                "name": "Amsah"
+                "name": "Amsah",
+                "hm": true,
+                "rank": 11
             }
         },
         {
             "year": 2008,
             "US-Southeast": {
-                "name": "Mew2King"
+                "name": "Mew2King",
+                "hm": false,
+                "rank": 1
             },
             "US-West": {
-                "name": "Mango"
+                "name": "Mango",
+                "hm": false,
+                "rank": 2
             },
             "US-Northeast": {
-                "name": "PC Chris"
+                "name": "PC Chris",
+                "hm": false,
+                "rank": 5
             },
             "Sweden": {
-                "name": "Armada"
+                "name": "Armada",
+                "hm": true,
+                "rank": 11
             }
         },
         {
             "year": 2009,
             "US-West": {
-                "name": "Mango"
+                "name": "Mango",
+                "hm": false,
+                "rank": 1
             },
             "Sweden": {
-                "name": "Armada"
+                "name": "Armada",
+                "hm": false,
+                "rank": 2
             },
             "US-Southeast": {
-                "name": "Hungrybox"
+                "name": "Hungrybox",
+                "hm": false,
+                "rank": 3
             }
         },
         {
             "year": 2010,
             "US-Southeast": {
-                "name": "Hungrybox"
+                "name": "Hungrybox",
+                "hm": false,
+                "rank": 1
             },
             "US-West": {
-                "name": "Mango"
+                "name": "Mango",
+                "hm": false,
+                "rank": 2
             },
             "Sweden": {
-                "name": "Armada"
+                "name": "Armada",
+                "hm": false,
+                "rank": 3
             },
             "Canada": {
-                "name": "KirbyKaze"
+                "name": "KirbyKaze",
+                "hm": false,
+                "rank": 8
             }
         },
         {
             "year": 2011,
             "Sweden": {
-                "name": "Armada"
+                "name": "Armada",
+                "hm": false,
+                "rank": 1
             },
             "US-West": {
-                "name": "Mango"
+                "name": "Mango",
+                "hm": false,
+                "rank": 2
             },
             "US-Southeast": {
-                "name": "PPMD"
+                "name": "PPMD",
+                "hm": false,
+                "rank": 3
             }
         },
         {
             "year": 2012,
             "Sweden": {
-                "name": "Armada"
+                "name": "Armada",
+                "hm": false,
+                "rank": 1
             },
             "US-Southeast": {
-                "name": "PPMD"
+                "name": "PPMD",
+                "hm": false,
+                "rank": 2
             },
             "US-West": {
-                "name": "Mango"
+                "name": "Mango",
+                "hm": false,
+                "rank": 3
             },
             "Canada": {
-                "name": "KirbyKaze"
+                "name": "KirbyKaze",
+                "hm": false,
+                "rank": 7
             }
         },
         {
             "year": 2013,
             "US-West": {
-                "name": "Mango"
+                "name": "Mango",
+                "hm": false,
+                "rank": 1
             },
             "Sweden": {
-                "name": "Armada"
+                "name": "Armada",
+                "hm": false,
+                "rank": 2
             },
             "US-Southeast": {
-                "name": "Mew2King"
+                "name": "Mew2King",
+                "hm": false,
+                "rank": 3
             },
             "Canada": {
-                "name": "KirbyKaze"
+                "name": "KirbyKaze",
+                "hm": false,
+                "rank": 9
             },
             "Japan": {
-                "name": "aMSa"
+                "name": "aMSa",
+                "hm": false,
+                "rank": 77
             },
             "Javi": {
-                "name": "Javi"
+                "name": "Javi",
+                "hm": false,
+                "rank": 17
             }
         },
         {
             "year": 2014,
             "US-West": {
-                "name": "Mango"
+                "name": "Mango",
+                "hm": false,
+                "rank": 1
             },
             "Sweden": {
-                "name": "Armada"
+                "name": "Armada",
+                "hm": false,
+                "rank": 2
             },
             "US-Southeast": {
-                "name": "PPMD"
+                "name": "PPMD",
+                "hm": false,
+                "rank": 3
             }
         },
         {
             "year": 2015,
             "Sweden": {
-                "name": "Armada"
+                "name": "Armada",
+                "hm": false,
+                "rank": 1
             },
             "US-Southeast": {
-                "name": "Hungrybox"
+                "name": "Hungrybox",
+                "hm": false,
+                "rank": 2
             },
             "US-West": {
-                "name": "Mango"
+                "name": "Mango",
+                "hm": false,
+                "rank": 4
             }
         },
         {
             "year": 2016,
             "Sweden": {
-                "name": "Armada"
+                "name": "Armada",
+                "hm": false,
+                "rank": 1
             },
             "US-Southeast": {
-                "name": "Hungrybox"
+                "name": "Hungrybox",
+                "hm": false,
+                "rank": 2
             },
             "US-West": {
-                "name": "Mango"
+                "name": "Mango",
+                "hm": false,
+                "rank": 3
             }
         },
         {
             "year": 2017,
             "US-Southeast": {
-                "name": "Hungrybox"
+                "name": "Hungrybox",
+                "hm": false,
+                "rank": 1
             },
             "Sweden": {
-                "name": "Armada"
+                "name": "Armada",
+                "hm": false,
+                "rank": 2
             },
             "US-West": {
-                "name": "Mango"
+                "name": "Mango",
+                "hm": false,
+                "rank": 3
             }
         },
         {
             "year": 2018,
             "US-Southeast": {
-                "name": "Hungrybox"
+                "name": "Hungrybox",
+                "hm": false,
+                "rank": 1
             },
             "Sweden": {
-                "name": "Armada"
+                "name": "Armada",
+                "hm": false,
+                "rank": 2
             },
             "US-West": {
-                "name": "Mango"
+                "name": "Mango",
+                "hm": false,
+                "rank": 5
             }
         },
         {
             "year": 2019,
             "US-Southeast": {
-                "name": "Hungrybox"
+                "name": "Hungrybox",
+                "hm": false,
+                "rank": 1
             },
             "Sweden": {
-                "name": "Leffen"
+                "name": "Leffen",
+                "hm": false,
+                "rank": 2
             },
             "US-West": {
-                "name": "Mango"
+                "name": "Mango",
+                "hm": false,
+                "rank": 3
             },
             "US-Southwest": {
-                "name": "Axe"
-            },
-            "Canada": {
-                "name": "Moky"
+                "name": "Axe",
+                "hm": false,
+                "rank": 4
             },
             "Japan": {
-                "name": "aMSa"
+                "name": "aMSa",
+                "hm": false,
+                "rank": 7
+            },
+            "Canada": {
+                "name": "Moky",
+                "hm": false,
+                "rank": 14
             }
         },
         {
@@ -299,43 +436,67 @@
         {
             "year": 2022,
             "US-Southeast": {
-                "name": "Zain"
+                "name": "Zain",
+                "hm": false,
+                "rank": 1
             },
             "Japan": {
-                "name": "aMSa"
+                "name": "aMSa",
+                "hm": false,
+                "rank": 2
             },
             "US-West": {
-                "name": "Mango"
+                "name": "Mango",
+                "hm": false,
+                "rank": 3
             },
             "US-Northeast": {
-                "name": "iBDW"
+                "name": "iBDW",
+                "hm": false,
+                "rank": 4
             },
             "Sweden": {
-                "name": "Leffen"
+                "name": "Leffen",
+                "hm": false,
+                "rank": 7
             },
             "Canada": {
-                "name": "Moky"
+                "name": "Moky",
+                "hm": false,
+                "rank": 13
             },
             "Australia": {
-                "name": "Joshman"
+                "name": "Joshman",
+                "hm": false,
+                "rank": 19
             }
         },
         {
             "year": 2023,
             "US-Northeast": {
-                "name": "iBDW"
+                "name": "iBDW",
+                "hm": false,
+                "rank": 1
             },
             "US-Southeast": {
-                "name": "Zain"
+                "name": "Zain",
+                "hm": false,
+                "rank": 2
             },
             "Canada": {
-                "name": "Moky"
+                "name": "Moky",
+                "hm": false,
+                "rank": 4
             },
             "Japan": {
-                "name": "aMSa"
+                "name": "aMSa",
+                "hm": false,
+                "rank": 6
             },
             "US-West": {
-                "name": "Mango"
+                "name": "Mango",
+                "hm": false,
+                "rank": 8
             }
         }
     ]
