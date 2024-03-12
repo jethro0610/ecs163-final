@@ -2,7 +2,6 @@ function generatePortrait(id, portraitLocation) {
     const g = d3.select("#map").select("g");
     const portrait = g.append("g");
     portrait.attr("id", id);
-    console.log(g);
 
     portrait.append("line")
         .attr("x1", portraitLocation.x0)
@@ -11,6 +10,12 @@ function generatePortrait(id, portraitLocation) {
         .attr("y2", portraitLocation.y0)
         .style("stroke", "#555555")
         .style("stroke-width", 0);
+
+    portrait.append("circle")
+        .attr('cx', portraitLocation.x0)
+        .attr('cy', portraitLocation.y0)
+        .attr('r', 0)
+        .attr('fill', '#dddddd');
 
     portrait.append("svg:image")
         .attr("x", portraitLocation.x0)
@@ -55,6 +60,12 @@ function disablePortrait(id) {
         .style("text-anchor", "middle")
         .attr("x", portraitLocation.x0)
         .attr("y", portraitLocation.y0);
+
+
+    portrait.select("circle")
+        .transition()
+        .duration(750)
+        .attr("r", 0)
 }
 
 function enablePortrait(id, player, radius) {
@@ -95,6 +106,12 @@ function enablePortrait(id, player, radius) {
         .style("font-size", "14px")
         .attr("x", portraitLocation.x0)
         .attr("y", portraitLocation.y0 - radius / 2 - 5);
+
+    portrait.select("circle")
+        .attr("r", 0)
+        .transition()
+        .duration(750)
+        .attr("r", radius / 2 + 2)
 }
 
 function changePortrait(id, player, radius) {
@@ -130,6 +147,14 @@ function changePortrait(id, player, radius) {
         .style("font-size", "14px")
         .attr("x", portraitLocation.x0)
         .attr("y", portraitLocation.y0 - radius / 2 - 5);
+
+    portrait.select("circle")
+        .transition()
+        .duration(750)
+        .attr("r", 0)
+        .transition()
+        .duration(750)
+        .attr("r", radius / 2 + 2)
 }
 
 function updatePortrait(id, player, radius) {
@@ -161,6 +186,11 @@ function updatePortrait(id, player, radius) {
         .style("text-anchor", "middle")
         .attr("x", portraitLocation.x0)
         .attr("y", portraitLocation.y0 - radius / 2 - 5);
+
+    portrait.select("circle")
+        .transition()
+        .duration(750)
+        .attr("r", radius / 2 + 2)
 }
 
 function generatePortraits() {

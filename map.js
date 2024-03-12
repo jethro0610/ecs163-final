@@ -72,7 +72,7 @@ function generateMap() {
         .translate([mapWidth / 2, mapHeight / 2]);
 
     const zoom = d3.zoom()
-        .scaleExtent([1, 8]) // Zoom levels
+        .scaleExtent([1, 10]) // Zoom levels
         .translateExtent([
             [0, 0],
             [mapWidth, mapHeight]
@@ -88,7 +88,19 @@ function generateMap() {
         .attr("transform", d3.event.transform);
 
         g
-        .selectAll("g")
+        .selectAll("text")
+        .attr("transform", d3.event.transform);
+
+        g
+        .selectAll("image")
+        .attr("transform", d3.event.transform);
+
+        g
+        .selectAll("line")
+        .attr("transform", d3.event.transform);
+
+        g
+        .selectAll("circle")
         .attr("transform", d3.event.transform);
     }
 
