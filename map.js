@@ -5,6 +5,7 @@ const mapHeight = 900;
 function changeMapTime(delta) {
     const mapSvg = d3.select("#map")
 
+    const prevYear = curYear;
     curYear += delta;
     curYear = Math.min(Math.max(curYear, 2001), 2023);
 
@@ -24,7 +25,9 @@ function changeMapTime(delta) {
         })
 
     document.getElementById("year").innerHTML = curYear;
+
     generateEventsForYear(curYear);
+    updatePortraitFromYear(curYear, prevYear);
 }
 
 function highlightRegion(region) {
@@ -108,40 +111,6 @@ function generateMap() {
             .attr("d", d3.geoPath()
                 .projection(projection)
             )
-
-    function generatePortrait(imageX, imageY, regionX, regionY) {
-        const imageRadius = 100;
-        const portrait = g.append("g");
-        portrait.append("line")
-            .attr("x1", imageX)
-            .attr("y1", imageY)
-            .attr("x2", regionX)
-            .attr("y2", regionY)
-            .style("stroke", "gray")
-            .style("stroke-width", 1);
-
-        portrait.append("svg:image")
-            .attr("x", imageX - imageRadius / 2)
-            .attr("y", imageY - imageRadius / 2)
-            .attr("width", imageRadius)
-            .attr("height", imageRadius)
-            .attr("xlink:href", "mango.png");
-
-        portrait.append("text")
-            .text("Mango")
-            .style("text-anchor", "middle")
-            .attr("x", imageX)
-            .attr("y", imageY - imageRadius / 2 - 5);
-    }
-
-    generatePortrait(80, 380, 150, 320); // US West
-    generatePortrait(360, 295, 250, 330); // US Northeast
-    generatePortrait(350, 400, 230, 350); // US Southeast
-    generatePortrait(850, 400, 810, 350); // Japan
-    generatePortrait(450, 170, 500, 220); // Sweden
-    generatePortrait(75, 120, 175, 275); // Canada 
-    generatePortrait(420, 250, 465, 288); // Netherlands
-    generatePortrait(750, 620, 800, 520); // Australia
 
     return svg;
 }

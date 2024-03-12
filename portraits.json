@@ -1,0 +1,346 @@
+{
+    "locations": {
+        "US-West": {
+            "x0": 80,
+            "y0": 380,
+            "x1": 150,
+            "y1": 320
+        },
+        "US-Northeast": {
+            "x0": 360, 
+            "y0": 295, 
+            "x1": 250, 
+            "y1": 330
+        },
+        "US-Southeast": {
+            "x0": 350,
+            "y0": 400,
+            "x1": 230,
+            "y1": 350
+        },
+        "Japan": {
+            "x0": 850,
+            "y0": 400,
+            "x1": 810,
+            "y1": 350
+        },
+        "Sweden": {
+            "x0": 450,
+            "y0": 170,
+            "x1": 500,
+            "y1": 220
+        },
+        "Canada": {
+            "x0": 75,
+            "y0": 120,
+            "x1": 175,
+            "y1": 275 
+        },
+        "Netherlands": {
+            "x0": 420,
+            "y0": 250,
+            "x1": 465,
+            "y1": 288
+        },
+        "Australia": {
+            "x0": 750,
+            "y0": 620,
+            "x1": 800,
+            "y1": 520
+        }
+    },
+    "years": [
+        {
+            "year": 2001,
+            "US-West": {
+                "name": "Ken"
+            }
+        },
+        {
+            "year": 2002,
+            "US-West": {
+                "name": "Ken"
+            }
+        },
+        {
+            "year": 2003,
+            "US-West": {
+                "name": "Ken"
+            }
+        },
+        {
+            "year": 2004,
+            "US-West": {
+                "name": "Ken"
+            },
+            "US-Southeast": {
+                "name": "Azen"
+            },
+            "Japan": {
+                "name": "Captain Jack"
+            }
+        },
+        {
+            "year": 2005,
+            "US-West": {
+                "name": "Ken"
+            },
+            "US-Southeast": {
+                "name": "ChuDat"
+            }
+        },
+        {
+            "year": 2006,
+            "US-West": {
+                "name": "Ken"
+            },
+            "US-Southeast": {
+                "name": "Azen"
+            },
+            "US-Northeast": {
+                "name": "PC Chris"
+            },
+            "Canada": {
+                "name": "The King"
+            }
+        },
+        {
+            "year": 2007,
+            "US-Southeast": {
+                "name": "Mew2King"
+            },
+            "US-West": {
+                "name": "Ken"
+            },
+            "US-Northeast": {
+                "name": "KoreanDJ"
+            },
+            "Netherlands": {
+                "name": "Amsah"
+            }
+        },
+        {
+            "year": 2008,
+            "US-Southeast": {
+                "name": "Mew2King"
+            },
+            "US-West": {
+                "name": "Mango"
+            },
+            "US-Northeast": {
+                "name": "Cort"
+            },
+            "Sweden": {
+                "name": "Armada"
+            }
+        },
+        {
+            "year": 2009,
+            "US-West": {
+                "name": "Mango"
+            },
+            "Sweden": {
+                "name": "Armada"
+            },
+            "US-Southeast": {
+                "name": "Hungrybox"
+            }
+        },
+        {
+            "year": 2010,
+            "US-Southeast": {
+                "name": "Hungrybox"
+            },
+            "US-West": {
+                "name": "Mango"
+            },
+            "Sweden": {
+                "name": "Armada"
+            },
+            "Canada": {
+                "name": "KirbyKaze"
+            }
+        },
+        {
+            "year": 2011,
+            "Sweden": {
+                "name": "Armada"
+            },
+            "US-West": {
+                "name": "Mango"
+            },
+            "US-Southeast": {
+                "name": "PPMD"
+            }
+        },
+        {
+            "year": 2012,
+            "Sweden": {
+                "name": "Armada"
+            },
+            "US-Southeast": {
+                "name": "PPMD"
+            },
+            "US-West": {
+                "name": "Mango"
+            },
+            "Canada": {
+                "name": "KirbyKaze"
+            }
+        },
+        {
+            "year": 2013,
+            "US-West": {
+                "name": "Mango"
+            },
+            "Sweden": {
+                "name": "Armada"
+            },
+            "US-Southeast": {
+                "name": "Mew2King"
+            },
+            "Canada": {
+                "name": "KirbyKaze"
+            },
+            "Japan": {
+                "name": "aMSa"
+            },
+            "Javi": {
+                "name": "Javi"
+            }
+        },
+        {
+            "year": 2014,
+            "US-West": {
+                "name": "Mango"
+            },
+            "Sweden": {
+                "name": "Armada"
+            },
+            "US-Southeast": {
+                "name": "PPMD"
+            }
+        },
+        {
+            "year": 2015,
+            "Sweden": {
+                "name": "Armada"
+            },
+            "US-Southeast": {
+                "name": "Hungrybox"
+            },
+            "US-West": {
+                "name": "Mango"
+            }
+        },
+        {
+            "year": 2016,
+            "Sweden": {
+                "name": "Armada"
+            },
+            "US-Southeast": {
+                "name": "Hungrybox"
+            },
+            "US-West": {
+                "name": "Mango"
+            }
+        },
+        {
+            "year": 2017,
+            "US-Southeast": {
+                "name": "Hungrybox"
+            },
+            "Sweden": {
+                "name": "Armada"
+            },
+            "US-West": {
+                "name": "Mango"
+            }
+        },
+        {
+            "year": 2018,
+            "US-Southeast": {
+                "name": "Hungrybox"
+            },
+            "Sweden": {
+                "name": "Armada"
+            },
+            "US-West": {
+                "name": "Mango"
+            },
+            "Japan": {
+                "name": "aMSa"
+            }
+        },
+        {
+            "year": 2019,
+            "US-Southeast": {
+                "name": "Hungrybox"
+            },
+            "Sweden": {
+                "name": "Leffen"
+            },
+            "US-West": {
+                "name": "Mango"
+            },
+            "US-Southwest": {
+                "name": "Axe"
+            },
+            "Canada": {
+                "name": "Moky"
+            },
+            "Japan": {
+                "name": "aMSa"
+            }
+        },
+        {
+            "year": 2020
+        },
+        {
+            "year": 2021
+        },
+        {
+            "year": 2022,
+            "US-Southeast": {
+                "name": "Zain"
+            },
+            "Japan": {
+                "name": "aMSa"
+            },
+            "US-West": {
+                "name": "Mango"
+            },
+            "US-Northeast": {
+                "name": "iBDW"
+            },
+            "Sweden": {
+                "name": "Leffen"
+            },
+            "Canada": {
+                "name": "Moky"
+            },
+            "Australia": {
+                "name": "Joshman"
+            }
+        },
+        {
+            "year": 2023,
+            "US-Northeast": {
+                "name": "iBDW"
+            },
+            "US-Southeast": {
+                "name": "Zain"
+            },
+            "Canada": {
+                "name": "Moky"
+            },
+            "Japan": {
+                "name": "aMSa"
+            },
+            "US-West": {
+                "name": "Mango"
+            }
+        }
+    ]
+}
+
