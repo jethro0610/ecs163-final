@@ -55,7 +55,7 @@ function disablePortrait(id) {
         .attr("y", portraitLocation.y0);
 }
 
-function changePortrait(id, player) {
+function enablePortrait(id, player) {
     player.radius = 100;
     const portrait = d3.select("#map").select("#" + id);
     const portraitLocation = portraitLocations[id];
@@ -70,13 +70,13 @@ function changePortrait(id, player) {
         .attr("y2", portraitLocation.y1);
 
     portrait.select("image")
-        .attr("xlink:href", player.name + ".png")
         .attr("x", portraitLocation.x0)
         .attr("y", portraitLocation.y0)
         .attr("width", 0)
         .attr("height", 0)
         .transition()
         .duration(750)
+        .attr("xlink:href", player.name + ".png")
         .attr("x", portraitLocation.x0 - player.radius / 2)
         .attr("y", portraitLocation.y0 - player.radius / 2)
         .attr("width", player.radius)
@@ -86,9 +86,43 @@ function changePortrait(id, player) {
         .attr("x", portraitLocation.x0)
         .attr("y", portraitLocation.y0)
         .attr("opacity", 0)
-        .text(player.name)
         .transition()
         .duration(750)
+        .text(player.name)
+        .attr("opacity", 1)
+        .attr("x", portraitLocation.x0)
+        .attr("y", portraitLocation.y0 - player.radius / 2 - 5);
+}
+
+function changePortrait(id, player) {
+    player.radius = 100;
+    const portrait = d3.select("#map").select("#" + id);
+    const portraitLocation = portraitLocations[id];
+
+    portrait.select("image")
+        .transition()
+        .duration(750)
+        .attr("x", portraitLocation.x0)
+        .attr("y", portraitLocation.y0)
+        .attr("width", 0)
+        .attr("height", 0)
+        .transition()
+        .duration(750)
+        .attr("xlink:href", player.name + ".png")
+        .attr("x", portraitLocation.x0 - player.radius / 2)
+        .attr("y", portraitLocation.y0 - player.radius / 2)
+        .attr("width", player.radius)
+        .attr("height", player.radius);
+
+    portrait.select("text")
+        .transition()
+        .duration(750)
+        .attr("x", portraitLocation.x0)
+        .attr("y", portraitLocation.y0)
+        .attr("opacity", 0)
+        .transition()
+        .duration(750)
+        .text(player.name)
         .attr("opacity", 1)
         .attr("x", portraitLocation.x0)
         .attr("y", portraitLocation.y0 - player.radius / 2 - 5);
@@ -141,7 +175,9 @@ function updatePortraitFromYear(curYear, prevYear = -1) {
         const curRegionPlayerName = curRegionPlayer == undefined ? undefined : curRegionPlayer.name;
         const prevRegionPlayerName = prevRegionPlayer == undefined ? undefined : prevRegionPlayer.name;
 
-        if (curRegionPlayerName == undefined)
+        if (prevRegionPlayerName == undefined && curRegionPlayerName != undefined)
+            enablePortrait(region, curRegionPlayer);
+        else if (curRegionPlayerName == undefined)
             disablePortrait(region);
         else if (curRegionPlayerName != prevRegionPlayerName)
             changePortrait(region, curRegionPlayer, 100)
