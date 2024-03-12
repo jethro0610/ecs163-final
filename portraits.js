@@ -22,6 +22,7 @@ function generatePortrait(id, portraitLocation) {
     portrait.append("text")
         .text("")
         .attr("opacity", 0)
+        .style("font-size", "0px")
         .style("text-anchor", "middle")
         .attr("x", portraitLocation.x0)
         .attr("y", portraitLocation.y0);
@@ -50,6 +51,7 @@ function disablePortrait(id) {
         .transition()
         .duration(750)
         .attr("opacity", 0)
+        .style("font-size", "0px")
         .style("text-anchor", "middle")
         .attr("x", portraitLocation.x0)
         .attr("y", portraitLocation.y0);
@@ -85,10 +87,12 @@ function enablePortrait(id, player, radius) {
         .attr("x", portraitLocation.x0)
         .attr("y", portraitLocation.y0)
         .attr("opacity", 0)
+        .style("font-size", "0px")
         .transition()
         .duration(750)
         .text(player.name)
         .attr("opacity", 1)
+        .style("font-size", "14px")
         .attr("x", portraitLocation.x0)
         .attr("y", portraitLocation.y0 - radius / 2 - 5);
 }
@@ -118,10 +122,12 @@ function changePortrait(id, player, radius) {
         .attr("x", portraitLocation.x0)
         .attr("y", portraitLocation.y0)
         .attr("opacity", 0)
+        .style("font-size", "0px")
         .transition()
         .duration(750)
         .text(player.name)
         .attr("opacity", 1)
+        .style("font-size", "14px")
         .attr("x", portraitLocation.x0)
         .attr("y", portraitLocation.y0 - radius / 2 - 5);
 }
@@ -151,6 +157,7 @@ function updatePortrait(id, player, radius) {
         .transition()
         .duration(750)
         .attr("opacity", 1)
+        .style("font-size", "14px")
         .style("text-anchor", "middle")
         .attr("x", portraitLocation.x0)
         .attr("y", portraitLocation.y0 - radius / 2 - 5);
