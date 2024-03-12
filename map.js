@@ -1,6 +1,6 @@
 let curYear = 2001;
-const mapWidth = 800;
-const mapHeight = 800;
+const mapWidth = 900;
+const mapHeight = 900;
 
 function changeMapTime(delta) {
     const mapSvg = d3.select("#map")
@@ -65,7 +65,7 @@ function generateMap() {
         .attr("height", mapHeight);
 
     const projection = d3.geoMercator()
-        .scale(120)
+        .scale(150)
         .translate([mapWidth / 2, mapHeight / 2]);
 
     const zoom = d3.zoom()
@@ -82,6 +82,10 @@ function generateMap() {
     function zoomed() {
         g
         .selectAll("path")
+        .attr("transform", d3.event.transform);
+
+        g
+        .selectAll("g")
         .attr("transform", d3.event.transform);
     }
 
@@ -104,6 +108,36 @@ function generateMap() {
             .attr("d", d3.geoPath()
                 .projection(projection)
             )
+
+    const imageX = 80;
+    const imageY = 380;
+    const imageRadius = 100;
+
+    const regionX = 150;
+    const regionY = 320;
+
+    const portrait = g.append("g");
+    portrait.append("line")
+        .attr("x1", imageX)
+        .attr("y1", imageY)
+        .attr("x2", regionX)
+        .attr("y2", regionY)
+        .style("stroke", "black")
+        .style("stroke-width", 1);
+
+    portrait.append("svg:image")
+        .attr("x", imageX - imageRadius / 2)
+        .attr("y", imageY - imageRadius / 2)
+        .attr("width", imageRadius)
+        .attr("height", imageRadius)
+        .attr("xlink:href", "mango.png");
+
+    portrait.append("text")
+        .text("Mango")
+        .style("text-anchor", "middle")
+        .attr("x", imageX)
+        .attr("y", imageY - imageRadius / 2 - 5);
+
 
     return svg;
 }
