@@ -9,8 +9,14 @@ body {
 }
 
 .event-card {
-    margin-top: 20px;
     margin-bottom: 20px;
+    background-color: #dddddd;
+    padding: 10px;
+}
+
+.event-card:hover {
+    background-color: #555555;
+    color: white;
 }
 
 .fill {
@@ -34,7 +40,24 @@ body {
 
 .flex-col {
     display: flex;
-    flex-direction: column
+    flex-direction: column;
+}
+
+.flex-start {
+    align-self: flex-start;
+}
+
+#left-panel {
+    margin-top: 50px;
+    margin-right: 50px;
+}
+
+#right-panel {
+    margin-left: 50px;
+}
+
+#year-switch {
+    margin-bottom: 20px; 
 }
 
 image {

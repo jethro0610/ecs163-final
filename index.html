@@ -11,12 +11,13 @@
 
     <body>
         <div class="flex-row flex-center fill">
-            <div id="left-panel" class="flex-col panel flex-center">
-                <div id="year">2001</div>
-                <div class="flex-row">
-                    <button onclick="changeMapTime(-1)">Back</button>
-                    <button onclick="changeMapTime(1)">Forward</button>
+            <div id="left-panel" class="flex-col panel flex-center flex-start">
+                <div id="year-switch" class="flex-row">
+                    <button onclick="changeMapTime(-1)"></button>
+                    <div id="year">2001</div>
+                    <button onclick="changeMapTime(1)"></button>
                 </div>
+                <div>Key Moments</div>
             </div>
 
             <div class="flex-col">

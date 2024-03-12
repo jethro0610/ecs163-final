@@ -36,7 +36,7 @@ function highlightRegion(region) {
     mapSvg.selectAll("path")
         .filter(function(d) { return region == "All" || d.properties.name == region })
         .transition()
-        .attr("fill", "red");
+        .attr("fill", "#555555");
 }
 
 function unhighlightRegion(region) {
