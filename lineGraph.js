@@ -7,12 +7,13 @@ function deleteLineGraph() {
 
 function generateLineGraph(region) {
     const margin = {top: 30, right: 30, bottom: 30, left: 30}
-    const width = 250 - margin.left - margin.right;
-    const height = 250 - margin.top - margin.bottom;
+    const width = 270 - margin.left - margin.right;
+    const height = 270 - margin.top - margin.bottom;
 
     // Create the SVG container.
     deleteLineGraph();
     var svg = d3.select("#right-panel").append("svg")
+        .attr("overflow", "visible")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
@@ -77,10 +78,28 @@ function generateLineGraph(region) {
 
     svg.append("text")
         .attr("x", (width / 2))             
-        .attr("y", 0 - (margin.top / 2))
+        .attr("y", 0 - (margin.top / 2) - 5)
         .attr("text-anchor", "middle")  
-        .style("font-size", "12px") 
+        .style("font-size", "14px") 
         .text(region + " Overall Ranking History");
+
+    svg.append("text")
+        .attr("class", "x label")
+        .attr("text-anchor", "end")
+        .style("font-size", "14px") 
+        .attr("x", width / 2)
+        .attr("y", height + 35)
+        .style("text-anchor", "middle")
+        .text("Year");
+
+    svg.append("text")
+        .attr("class", "y label")
+        .style("font-size", "14px") 
+        .attr("transform", "rotate(-90)")
+        .attr("y", -35)
+        .attr("x", -height / 2)
+        .style("text-anchor", "middle")
+        .text("Relative Skill Level");
 
     lineGraph = svg;
     return svg;
