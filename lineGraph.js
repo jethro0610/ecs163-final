@@ -75,6 +75,13 @@ function generateLineGraph(region) {
             .attr("r", function(d) { return curYear == d.year ? 8.0 : 4.0; } )
             .attr("fill", function(d) { return curYear == d.year ? "blue" : "steelblue"; } )
 
+    svg.append("text")
+        .attr("x", (width / 2))             
+        .attr("y", 0 - (margin.top / 2))
+        .attr("text-anchor", "middle")  
+        .style("font-size", "12px") 
+        .text(region + " Overall Ranking History");
+
     lineGraph = svg;
     return svg;
 }
