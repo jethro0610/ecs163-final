@@ -32,6 +32,13 @@ function changeMapTime(delta) {
 
     document.getElementById("year").innerHTML = curYear;
 
+    if (curYear == 2020 || curYear == 2021)
+        document.getElementById("rank-list-title").innerHTML = "COVID";
+    else if (curYear < 2013)
+        document.getElementById("rank-list-title").innerHTML = "RetroSSBMRank " + curYear;
+    else
+        document.getElementById("rank-list-title").innerHTML = "SSBMRank " + curYear;
+
     generateEventsForYear(curYear);
     generateRankListForYear(curYear, selectedRegion);
     updatePortraitFromYear(curYear, prevYear);

@@ -13,6 +13,7 @@ function generateLineGraph(region) {
     // Create the SVG container.
     deleteLineGraph();
     var svg = d3.select("#right-panel").append("svg")
+        .attr("id", "line-graph")
         .attr("overflow", "visible")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
