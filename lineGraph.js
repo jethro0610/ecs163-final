@@ -73,7 +73,7 @@ function generateLineGraph(region) {
             .attr("cx", function(d) { return x(d.year); })
             .attr("cy", function(d) { return y(d.score); })
             .attr("r", function(d) { return curYear == d.year ? 8.0 : 4.0; } )
-            .attr("fill", function(d) { return curYear == d.year ? "blue" : "steelblue"; } )
+            .attr("fill", function(d) { return curYear == d.year ? "#B57847" : "steelblue"; } )
 
     svg.append("text")
         .attr("x", (width / 2))             

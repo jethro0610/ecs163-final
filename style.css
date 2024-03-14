@@ -83,6 +83,28 @@ body {
     color: white;
 }
 
+#rank-list-title {
+    font-size: 32px;
+}
+
+#year {
+    font-size: 32px;
+}
+
+.sel-arrow {
+    height: 24px;
+    width: 24px;
+    margin: 5px;
+}
+
+.sel-arrow:hover {
+    opacity: 0.75;
+}
+
+.flip {
+    transform: scale(-1.0, 1.0);
+}
+
 image {
     border-radius: 50%;
 }
