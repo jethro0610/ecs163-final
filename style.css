@@ -53,11 +53,34 @@ body {
 }
 
 #right-panel {
+    margin-top: 50px;
     margin-left: 50px;
 }
 
 #year-switch {
     margin-bottom: 20px; 
+}
+
+#rank-list {
+    height: 500px;
+    overflow: scroll;
+    width: 100%;
+    margin: 20px;
+    margin-top: 0px;
+}
+
+.rank-card {
+    margin-bottom: 2px;
+    background-color: #dddddd;
+    padding: 2px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.rank-card:hover {
+    background-color: #555555;
+    color: white;
 }
 
 image {

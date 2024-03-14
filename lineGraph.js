@@ -1,9 +1,17 @@
+let lineGraph = null;
+
+function deleteLineGraph() {
+    lineGraph = null;
+    d3.select("#right-panel").select("svg").remove()
+}
+
 function generateLineGraph(region) {
     const margin = {top: 30, right: 30, bottom: 30, left: 30}
-    const width = 200 - margin.left - margin.right;
-    const height = 200 - margin.top - margin.bottom;
+    const width = 250 - margin.left - margin.right;
+    const height = 250 - margin.top - margin.bottom;
 
     // Create the SVG container.
+    deleteLineGraph();
     var svg = d3.select("#right-panel").append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
@@ -64,9 +72,10 @@ function generateLineGraph(region) {
         .append("circle")
             .attr("cx", function(d) { return x(d.year); })
             .attr("cy", function(d) { return y(d.score); })
-            .attr("r", 4.0)
-            .style("fill", "steelblue")
+            .attr("r", function(d) { return curYear == d.year ? 8.0 : 4.0; } )
+            .attr("fill", function(d) { return curYear == d.year ? "blue" : "steelblue"; } )
 
+    lineGraph = svg;
     return svg;
 }
 

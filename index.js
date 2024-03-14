@@ -1,6 +1,7 @@
 let regionData;
 let portraitLocations;
 let portraitYears;
+let selectedRegion = "All";
 
 // Load the region data and store it as a global variable
 d3.json("world_melee_data.json", function(data) {
@@ -12,6 +13,5 @@ d3.json("world_melee_data.json", function(data) {
         generateMap();
         generatePortraits();
         updatePortraitFromYear(2001);
-        generateLineGraph("US Northeast");
     });
 });

@@ -9,30 +9,37 @@ function changeMapTime(delta) {
     curYear += delta;
     curYear = Math.min(Math.max(curYear, 2001), 2023);
 
-    const colorScale = d3.scaleLinear()
+    const deselectColorScale = d3.scaleLinear()
         .domain([0, regionData.highestScores[curYear - 2001]])
         .range(["#efefef", "steelblue"]);
+
+    const selectColorScale = d3.scaleLinear()
+        .domain([0, regionData.highestScores[curYear - 2001]])
+        .range(["#efefef", "#B57847"]);
 
     const minScore = regionData.highestScores[curYear - 2001] / 8.0;
 
     mapSvg.selectAll("path")
         .transition()
         .attr("fill", function(d) {
-            if (d.properties.scores[curYear - 2001] > 0.0)
-                return colorScale(Math.max(d.properties.scores[curYear - 2001], minScore));
+            if (selectedRegion == d.properties.name)
+                return selectColorScale(Math.max(d.properties.scores[curYear - 2001], minScore));
+            else if (d.properties.scores[curYear - 2001] > 0.0)
+                return deselectColorScale(Math.max(d.properties.scores[curYear - 2001], minScore));
             else
-                return colorScale(0);
+                return deselectColorScale(0);
         })
 
     document.getElementById("year").innerHTML = curYear;
 
     generateEventsForYear(curYear);
+    generateRankListForYear(curYear, selectedRegion);
     updatePortraitFromYear(curYear, prevYear);
+    generateLineGraph(selectedRegion);
 }
 
 function highlightRegion(region) {
     const mapSvg = d3.select("#map")
-
     mapSvg.selectAll("path")
         .filter(function(d) { return region == "All" || d.properties.name == region })
         .transition()
@@ -42,9 +49,13 @@ function highlightRegion(region) {
 function unhighlightRegion(region) {
     const mapSvg = d3.select("#map")
 
-    const colorScale = d3.scaleLinear()
+    const deselectColorScale = d3.scaleLinear()
         .domain([0, regionData.highestScores[curYear - 2001]])
         .range(["#efefef", "steelblue"]);
+
+    const selectColorScale = d3.scaleLinear()
+        .domain([0, regionData.highestScores[curYear - 2001]])
+        .range(["#efefef", "#B57847"]);
 
     const minScore = regionData.highestScores[curYear - 2001] / 8.0;
 
@@ -52,14 +63,56 @@ function unhighlightRegion(region) {
         .filter(function(d) { return region == "All" || d.properties.name == region })
         .transition()
         .attr("fill", function(d) {
+            if (selectedRegion == d.properties.name)
+                return selectColorScale(Math.max(d.properties.scores[curYear - 2001], minScore));
+            else if (d.properties.scores[curYear - 2001] > 0.0)
+                return deselectColorScale(Math.max(d.properties.scores[curYear - 2001], minScore));
+            else
+                return deselectColorScale(0);
+        })
+}
+
+function selectRegion(region)
+{
+    const mapSvg = d3.select("#map")
+
+    const selectColorScale = d3.scaleLinear()
+        .domain([0, regionData.highestScores[curYear - 2001]])
+        .range(["#efefef", "#B57847"]);
+
+    const minScore = regionData.highestScores[curYear - 2001] / 8.0;
+
+    mapSvg.selectAll("path")
+        .filter(function(d) { return d.properties.name == region })
+        .transition()
+        .attr("fill", function(d) {
+            return selectColorScale(Math.max(d.properties.scores[curYear - 2001], minScore));
+        })
+}
+
+function deselectRegion(region)
+{
+    const mapSvg = d3.select("#map")
+    mapSvg.selectAll("path")
+        .filter(function(d) { return d.properties.name == region })
+
+    const colorScale = d3.scaleLinear()
+        .domain([0, regionData.highestScores[curYear - 2001]])
+        .range(["#efefef", "steelblue"]);
+
+    const minScore = regionData.highestScores[curYear - 2001] / 8.0;
+
+    mapSvg.selectAll("path")
+        .filter(function(d) { return d.properties.name == region })
+        .transition()
+        .attr("fill", function(d) {
             if (d.properties.scores[curYear - 2001] > 0.0)
                 return colorScale(Math.max(d.properties.scores[curYear - 2001], minScore));
             else
                 return colorScale(0);
         })
-
-    document.getElementById("year").innerHTML = curYear;
 }
+
 
 function generateMap() {
     // Create the SVG container.
@@ -123,6 +176,24 @@ function generateMap() {
             .attr("d", d3.geoPath()
                 .projection(projection)
             )
+            .attr("stroke", "none")
+            .on('click', function(d) { 
+                if (d.properties.scores[curYear - 2001] <= 0.0 && d.properties.name != selectedRegion)
+                    return;
+
+                deselectRegion(selectedRegion);
+                if (selectedRegion != d.properties.name) {
+                    selectedRegion = d.properties.name;
+                    selectRegion(selectedRegion);
+                    generateLineGraph(selectedRegion);
+                }
+                else {
+                    selectedRegion = "All";
+                    deleteLineGraph();
+                }
+
+                generateRankListForYear(curYear, selectedRegion);
+            })
 
     return svg;
 }

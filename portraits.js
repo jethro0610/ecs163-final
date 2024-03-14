@@ -229,8 +229,6 @@ function updatePortraitFromYear(curYear, prevYear = -1) {
         const clampRank = Math.min(curRegionPlayer == undefined ? 10 : curRegionPlayer.rank, minRank);
         const radius = maxRadius * Math.pow((lowestRank - (clampRank - 1)) / lowestRank, 0.75);
 
-        console.log(radius);
-
         if (prevRegionPlayerName == undefined && curRegionPlayerName != undefined)
             enablePortrait(region, curRegionPlayer, radius);
         else if (curRegionPlayerName == undefined)
