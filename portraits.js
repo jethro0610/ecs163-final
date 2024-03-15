@@ -8,7 +8,7 @@ function generatePortrait(id, portraitLocation) {
         .attr("y1", portraitLocation.y0)
         .attr("x2", portraitLocation.x0)
         .attr("y2", portraitLocation.y0)
-        .style("stroke", "#888888")
+        .style("stroke", "#222222")
         .style("stroke-width", 0);
 
     portrait.append("circle")
