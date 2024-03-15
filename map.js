@@ -42,7 +42,8 @@ function changeMapTime(delta) {
     generateEventsForYear(curYear);
     generateRankListForYear(curYear, selectedRegion);
     updatePortraitFromYear(curYear, prevYear);
-    generateLineGraph(selectedRegion);
+    if (selectedRegion != "All")
+        generateLineGraph(selectedRegion);
 }
 
 function highlightRegion(region) {

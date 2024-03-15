@@ -2,7 +2,7 @@ let events;
 let eventDivs = [];
 
 // Load the region data and store it as a global variable
-d3.json("events.json", function(data) {
+d3.json("./data/events.json", function(data) {
     events = data;
     generateEventsForYear(2001);
 });

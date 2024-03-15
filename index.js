@@ -4,9 +4,9 @@ let portraitYears;
 let selectedRegion = "All";
 
 // Load the region data and store it as a global variable
-d3.json("world_melee_data.json", function(data) {
+d3.json("./data/world_melee_data.json", function(data) {
     regionData = data;
-    d3.json("portraits.json", function(portraitData) {
+    d3.json("./data/portraits.json", function(portraitData) {
         portraitLocations = portraitData.locations;
         portraitYears = portraitData.years;
 

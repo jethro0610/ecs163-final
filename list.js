@@ -1,7 +1,7 @@
 let ranks;
 let rankDivs = [];
 
-d3.json("ranks.json", function(data) {
+d3.json("./data/ranks.json", function(data) {
     ranks = data;
     generateRankListForYear(2001, selectedRegion);
 });

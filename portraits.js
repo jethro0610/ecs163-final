@@ -88,7 +88,7 @@ function enablePortrait(id, player, radius) {
         .attr("height", 0)
         .transition()
         .duration(750)
-        .attr("xlink:href", player.name + ".png")
+        .attr("xlink:href", "./images/" + player.name + ".png")
         .attr("x", portraitLocation.x0 - radius / 2)
         .attr("y", portraitLocation.y0 - radius / 2)
         .attr("width", radius)
@@ -127,7 +127,7 @@ function changePortrait(id, player, radius) {
         .attr("height", 0)
         .transition()
         .duration(750)
-        .attr("xlink:href", player.name + ".png")
+        .attr("xlink:href", "./images/" + player.name + ".png")
         .attr("x", portraitLocation.x0 - radius / 2)
         .attr("y", portraitLocation.y0 - radius / 2)
         .attr("width", radius)
@@ -175,7 +175,7 @@ function updatePortrait(id, player, radius) {
         .attr("y", portraitLocation.y0 - radius / 2)
         .attr("width", radius)
         .attr("height", radius)
-        .attr("xlink:href", player.name + ".png");
+        .attr("xlink:href", "./images/" + player.name + ".png");
 
     portrait.select("text")
         .text(player.name)
